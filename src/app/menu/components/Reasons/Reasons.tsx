@@ -18,22 +18,22 @@ export default function Reasons() {
           </div>
         </div>
         <div className="flex justify-center items-start tab:flex-row flex-col w-full tab:gap-[5%] gap-[3rem] text-[0.9rem]">
-          <div className="flex flex-col tab:w-[20%]  gap-[1rem]">
+          <div className="flex flex-col tab:w-[23%]  gap-[1rem]">
             <div className=" flex justify-center items-center">
               <FlashOnRoundedIcon fontSize="large"></FlashOnRoundedIcon>
             </div>
             <div className="flex justify-center">Молниеносная скорость</div>
-            <div className="text-gray-500 text-center p-[3%] tab:p-[0px]">
+            <div className="text-gray-500 text-center p-[3%] tab:p-[0px] ">
               Ответ приходит очень быстро. Мы стараемся, чтобы вы не ждали ни
               секунды больше, чем нужно.
             </div>
           </div>
 
-          <div className="flex flex-col tab:w-[20%]  gap-[1rem]">
+          <div className="flex flex-col tab:w-[27%]  gap-[1rem]">
             <div className=" flex justify-center items-center">
               <SecuritySharpIcon fontSize="large"></SecuritySharpIcon>
             </div>
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center w-full ">
               Безопасность и конфиденциальность
             </div>
             <div className="text-gray-500 text-center  p-[3%] tab:p-[0px]">
@@ -41,7 +41,7 @@ export default function Reasons() {
               защитить вашу информацию от любых угроз.
             </div>
           </div>
-          <div className="flex flex-col tab:w-[20%]  gap-[1rem] justify-start">
+          <div className="flex flex-col tab:w-[23%]  gap-[1rem] justify-start">
             <div className=" flex justify-center items-center">
               <PublicSharpIcon fontSize="large"></PublicSharpIcon>
             </div>

@@ -1,25 +1,41 @@
 "use client";
 import BlackButton from "../BlackButton/BlackButton";
 import { Brain } from "lucide-react";
-import { Menu } from "lucide-react";
 import { useRouter } from "next/navigation";
-// import MenuButton from "../MenuButton/MenuButton";
+import { useEffect, useState } from "react";
+
+import HeaderMob from "../HeaderMob/HeaderMob";
 export default function Header() {
   const router = useRouter();
+  const [showMenu, setShowMenu] = useState(false);
+  useEffect(() => {
+    console.log(showMenu);
+  }, [showMenu]);
   return (
     <>
-      <div className="flex justify-center sticky top-0 z-50 bg-white  w-full p-[2%] border-b-[1px] border-b-gray-300 font-thin">
-        <div className="flex gap-[5%] tab:w-[20%] w-full ">
-          <div className="flex items-center">
-            <Brain width={35} height={35}></Brain>
+      <div
+        className={`flex justify-center sticky top-0 z-50 bg-white  w-full p-[2%] border-b-[1px] border-b-gray-300 font-thin ${
+          showMenu ? "bg-black/50" : ""
+        }`}
+      >
+        <div className="flex  tab:w-[25%] w-full  ">
+          <div className="flex w-[50%]  gap-[3%] ">
+            <div className="flex items-center">
+              <Brain width={35} height={35}></Brain>
+            </div>
+            <div className="font-bold text-[1.1rem] flex items-center   ">
+              AI Plus
+            </div>
           </div>
-          <div className="font-bold text-[1.2rem] flex items-center ">
-            AI Plus
-          </div>
-          <div className="tab:hidden ml-[50%] flex items-center">
-            <Menu></Menu>
+
+          <div
+            onClick={() => setShowMenu(!showMenu)}
+            className="tab:hidden w-[65%]  flex items-center justify-end "
+          >
+            <HeaderMob></HeaderMob>
           </div>
         </div>
+
         <div className="hidden gap-[5%] w-[50%] justify-center tab:flex">
           <button
             onClick={() => router.push("/menu")}
@@ -33,13 +49,17 @@ export default function Header() {
           >
             Цены{" "}
           </button>
-          <button className="flex items-center text-[0.9rem] font-light">
+          <button
+            onClick={() => router.push("/menu")}
+            className="flex items-center text-[0.9rem] font-light"
+          >
             Сравнение
           </button>
-          <button className="flex items-center text-[0.9rem] font-light">
-            О нас
-          </button>
-          <button className="flex items-center text-[0.9rem] font-light">
+
+          <button
+            onClick={() => router.push("/contacts")}
+            className="flex items-center text-[0.9rem] font-light"
+          >
             Контакты
           </button>
         </div>

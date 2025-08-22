@@ -28,7 +28,7 @@ export default function SignUpForm() {
               <Input placeHolder="Подтвердите ваше пароль"></Input>
             </div>
             <div className="flex justify-start w-full ml-[5%] ">
-              <button className="border-2px text-[0.9rem]  w-[90%] bg-black text-white p-[1%] hover:bg-gray-900 rounded-[0.5rem]  ">
+              <button className="border-2px text-[0.9rem]  w-[90%] bg-black text-white p-[2%] hover:bg-gray-900 rounded-[0.5rem]  ">
                 Создать аккаунт
               </button>
             </div>

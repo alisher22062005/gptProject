@@ -15,7 +15,7 @@ export default function LogInForm() {
             <div className="flex flex-col ml-[5%] w-full font-medium">
               <div>Пароль</div>
 
-              <Input placeHolder="Придумайте пароль"></Input>
+              <Input placeHolder="Введите пароль"></Input>
             </div>
             <div className="flex justify-start w-full ml-[5%] ">
               <button className="border-2px  w-[90%] bg-black text-white p-[1%] hover:bg-gray-900 rounded-[0.5rem] ">
