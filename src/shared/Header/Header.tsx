@@ -19,9 +19,9 @@ export default function Header() {
         }`}
       >
         <div className="flex  tab:w-[25%] w-full  ">
-          <div className="flex w-[50%]  gap-[3%] ">
-            <div className="flex items-center">
-              <Brain width={35} height={35}></Brain>
+          <div className="flex w-[50%]  gap-[3%] hover:text-blue-500 hover:scale-105 transition-transform  ">
+            <div className="flex items-center transition-transform duration-1000 hover:rotate-[360deg]">
+              <Brain width={32} height={32}></Brain>
             </div>
             <div className="font-bold text-[1.1rem] flex items-center   ">
               AI Plus
@@ -67,7 +67,7 @@ export default function Header() {
           <div className="flex items-center  ">
             <button
               onClick={() => router.push("/logIn")}
-              className="text-[0.9rem] p-[15%] pr-[20%] pl-[20%] rounded-[0.5rem] hover:bg-gray-200   font-medium"
+              className="text-[0.9rem] p-[15%] pr-[20%] pl-[20%] rounded-[0.5rem] hover:bg-gray-200 hover:scale-105 transition-transform active:scale-95   font-medium"
             >
               Войти
             </button>

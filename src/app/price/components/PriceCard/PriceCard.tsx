@@ -35,8 +35,7 @@ export default function PriceCard({ card }: PriceCardProps) {
           </div>
           <div className="font-medium text-[1.1rem]">{card.name}</div>
           <div className="text-[1.3rem] font-bold">
-            {price}
-            <span className="text-gray-300">/месяц</span>
+            {price}$<span className="text-gray-300">/месяц</span>
           </div>
           <div className="text-gray-400 font-bold w-[100%] text-[0.9rem]   text-center ">
             {card.forWhom}
@@ -59,7 +58,9 @@ export default function PriceCard({ card }: PriceCardProps) {
               : ""
           }  `}
         >
-          <button className="w-[80%] text-[0.9rem] ">Начать</button>
+          <button className="w-[80%] text-[0.9rem] hover:scale-110 transition-transform active:scale-95  duration-200 ">
+            Начать
+          </button>
         </div>
       </div>
     </>

@@ -2,8 +2,8 @@
 import Header from "@/shared/Header/Header";
 import Get from "@/app/menu/components/Get_gpt/Get";
 import Reasons from "@/app/menu/components/Reasons/Reasons";
-import Links from "@/app/menu/components/Links/Links";
-import Footer from "@/app/menu/components/Footer/Footer";
+import Links from "@/shared/Links/Links";
+import { Footer } from "@/shared/Footer/Footer";
 import { motion } from "framer-motion";
 
 export default function Menu() {

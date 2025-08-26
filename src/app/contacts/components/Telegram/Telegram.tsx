@@ -61,7 +61,7 @@ export default function Telegram() {
           <div className="flex flex-col gap-[1rem]">
             <div className="flex justify-center text-white">
               {" "}
-              <button className="flex justify-center  bg-gradient-to-r from-blue-600 to-purple-600  gap-[3%] w-[90%] bg-red-300 rounded-[0.5rem] p-[2%]  hover:bg-gradient-to-r hover:from-blue-700 hover:to-purple-700 hover:scale-[1.02]">
+              <button className="flex justify-center  bg-gradient-to-r from-blue-600 to-purple-600  gap-[3%] w-[90%] bg-red-300 rounded-[0.5rem] p-[2%]  hover:bg-gradient-to-r hover:from-blue-700 hover:to-purple-700 hover:scale-[1.02] active:scale-100">
                 <Send width={15}></Send>
                 <div className="text-[0.9rem] flex items-center">
                   Написать в Telegram

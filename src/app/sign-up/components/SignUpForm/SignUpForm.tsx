@@ -1,5 +1,12 @@
+"use client";
 import Input from "@/shared/Input/Input";
+import { useState } from "react";
+
 export default function SignUpForm() {
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <>
       <div className="flex flex-col mt-[10%] lap:mt-[5%]   gap-[0.5rem] w-full items-center pb-[10%] lap:pb-[5%]  ">
@@ -10,25 +17,40 @@ export default function SignUpForm() {
             <div className="flex flex-col font-medium  ml-[5%] w-full">
               <div className="text-[0.9rem]">Полное имя *</div>
 
-              <Input placeHolder="Введите ваше польное имя"></Input>
+              <Input
+                change={setFullName}
+                value={fullName}
+                placeHolder="Введите ваше польное имя"
+              ></Input>
             </div>
             <div className="flex flex-col font-medium  ml-[5%] w-full">
               <div className="text-[0.9rem]">Email адрес *</div>
 
-              <Input placeHolder="Введите ваш email"></Input>
+              <Input
+                change={setEmail}
+                value={email}
+                placeHolder="Введите ваш email"
+              ></Input>
             </div>
             <div className="flex flex-col font-medium  ml-[5%] w-full ">
               <div className="text-[0.9rem]">Пароль *</div>
 
-              <Input placeHolder="Создайте пароль (мин. 6 символов)"></Input>
+              <Input
+                change={setPassword}
+                value={password}
+                placeHolder="Создайте пароль (мин. 6 символов)"
+              ></Input>
             </div>
-            <div className="flex flex-col ml-[5%] w-full font-medium">
+            {/* <div className="flex flex-col ml-[5%] w-full font-medium">
               <div className="text-[0.9rem]">Подтвердите пароль *</div>
 
-              <Input placeHolder="Подтвердите ваше пароль"></Input>
-            </div>
+              <Input
+                value={password}
+                placeHolder="Подтвердите ваше пароль"
+              ></Input>
+            </div> */}
             <div className="flex justify-start w-full ml-[5%] ">
-              <button className="border-2px text-[0.9rem]  w-[90%] bg-black text-white p-[2%] hover:bg-gray-900 rounded-[0.5rem]  ">
+              <button className="border-2px text-[0.9rem]  w-[90%] bg-black text-white p-[2%] hover:bg-gray-900 rounded-[0.5rem] hover:scale-105 transition-transform active:scale-100  ">
                 Создать аккаунт
               </button>
             </div>

@@ -22,7 +22,9 @@ export default function Reasons() {
             <div className=" flex justify-center items-center">
               <FlashOnRoundedIcon fontSize="large"></FlashOnRoundedIcon>
             </div>
-            <div className="flex justify-center">Молниеносная скорость</div>
+            <div className="flex justify-center font-semibold">
+              Молниеносная скорость
+            </div>
             <div className="text-gray-500 text-center p-[3%] tab:p-[0px] ">
               Ответ приходит очень быстро. Мы стараемся, чтобы вы не ждали ни
               секунды больше, чем нужно.
@@ -33,7 +35,7 @@ export default function Reasons() {
             <div className=" flex justify-center items-center">
               <SecuritySharpIcon fontSize="large"></SecuritySharpIcon>
             </div>
-            <div className="flex justify-center items-center w-full ">
+            <div className="flex justify-center items-center w-full font-semibold ">
               Безопасность и конфиденциальность
             </div>
             <div className="text-gray-500 text-center  p-[3%] tab:p-[0px]">
@@ -45,7 +47,9 @@ export default function Reasons() {
             <div className=" flex justify-center items-center">
               <PublicSharpIcon fontSize="large"></PublicSharpIcon>
             </div>
-            <div className="flex justify-center">Глобальный доступ</div>
+            <div className="flex justify-center font-semibold">
+              Глобальный доступ
+            </div>
             <div className="text-gray-500 text-center  p-[3%] tab:p-[0px]">
               Платформа работает везде. Вы можете пользоваться сервисом быстро и
               удобно в любой точке мира.

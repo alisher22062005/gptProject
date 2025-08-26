@@ -10,3 +10,44 @@ body {
 code {
   font-family: var(--font-geist-mono);
 }
+
+@keyframes pulseScale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* register as a class */
+.animate-pulseScale {
+  animation: pulseScale 1s ease-in-out infinite;
+}
+
+@keyframes pingSlow {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-pingSlow {
+  animation: pingSlow 2s cubic-bezier(0, 0, 0.1, 0) infinite; /* 👈 2s instead of 1s */
+}
+
+@keyframes moveX {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px); /* move right */
+  }
+}
+
+.animate-moveX {
+  animation: moveX 2s ease-in-out infinite;
+}

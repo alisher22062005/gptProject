@@ -4,6 +4,8 @@ import ListCard from "./components/ListCard/ListCard";
 import Saving from "./components/Saving/saving";
 import Header from "@/shared/Header/Header";
 import { motion } from "framer-motion";
+import Links from "@/shared/Links/Links";
+import { Footer as F } from "../../shared/Footer/Footer";
 
 export default function Price() {
   return (
@@ -35,6 +37,21 @@ export default function Price() {
         transition={{ duration: 1, ease: "easeOut" }}
       >
         <Footer></Footer>
+      </motion.div>
+      <motion.div
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
+        <Links />
+      </motion.div>
+
+      <motion.div
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
+        <F />
       </motion.div>
     </>
   );
