@@ -14,16 +14,16 @@ export default function Header() {
   return (
     <>
       <div
-        className={`flex justify-center sticky top-0 z-50 bg-white  w-full p-[2%] border-b-[1px] border-b-gray-300 font-thin ${
-          showMenu ? "bg-black/50" : ""
+        className={`flex justify-center sticky top-0 z-50 bg-white  w-full p-[2%]  border-b-[3px]   border-b-gray-300 font-thin ${
+          showMenu ? "bg-black/50" : "bg-black/80"
         }`}
       >
         <div className="flex  tab:w-[25%] w-full  ">
-          <div className="flex w-[50%]  gap-[3%] hover:text-blue-500 hover:scale-105 transition-transform  ">
+          <div className="flex w-[50%]  gap-[3%] hover:text-b1-500 hover:scale-105 transition-transform  ">
             <div className="flex items-center transition-transform duration-1000 hover:rotate-[360deg]">
               <Brain width={32} height={32}></Brain>
             </div>
-            <div className="font-bold text-[1.1rem] flex items-center   ">
+            <div className="font-bold text-[1rem] flex items-center   ">
               AI Plus
             </div>
           </div>
@@ -39,26 +39,32 @@ export default function Header() {
         <div className="hidden gap-[5%] w-[50%] justify-center tab:flex">
           <button
             onClick={() => router.push("/menu")}
-            className="flex items-center text-[0.9rem] font-light"
+            className="flex items-center text-[1rem] font-light"
           >
             Главная{" "}
           </button>
           <button
+            onClick={() => router.push("/api")}
+            className="flex items-center  text-[1rem] font-semibold"
+          >
+            AI Chat{" "}
+          </button>
+          <button
             onClick={() => router.push("/price")}
-            className="flex items-center text-[0.9rem] font-light"
+            className="flex items-center text-[1rem] font-light"
           >
             Цены{" "}
           </button>
           <button
             onClick={() => router.push("/menu")}
-            className="flex items-center text-[0.9rem] font-light"
+            className="flex items-center text-[1rem] font-light"
           >
             Сравнение
           </button>
 
           <button
             onClick={() => router.push("/contacts")}
-            className="flex items-center text-[0.9rem] font-light"
+            className="flex items-center text-[1rem] font-light"
           >
             Контакты
           </button>
@@ -67,14 +73,14 @@ export default function Header() {
           <div className="flex items-center  ">
             <button
               onClick={() => router.push("/logIn")}
-              className="text-[0.9rem] p-[15%] pr-[20%] pl-[20%] rounded-[0.5rem] hover:bg-gray-200 hover:scale-105 transition-transform active:scale-95   font-medium"
+              className="text-[1rem] p-[15%] pr-[20%] pl-[20%] rounded-[0.5rem] hover:bg-gray-200 hover:scale-105 transition-transform active:scale-95   font-medium"
             >
               Войти
             </button>
           </div>
           <div
             onClick={() => router.push("sign-up")}
-            className=" text-[0.8rem]    "
+            className=" text-[1rem]    "
           >
             <BlackButton
               content="Регистрация"
