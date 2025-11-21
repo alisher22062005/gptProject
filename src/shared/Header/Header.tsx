@@ -3,14 +3,41 @@ import BlackButton from "../BlackButton/BlackButton";
 import { Brain } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "@/app/firebase/configure";
+import { useAuth } from "@/app/firebase/AuthProvier";
 import HeaderMob from "../HeaderMob/HeaderMob";
 export default function Header() {
   const router = useRouter();
+  const { user, loading } = useAuth();
   const [showMenu, setShowMenu] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
+  // const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     console.log(showMenu);
   }, [showMenu]);
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) setIsLogin(true);
+      else setIsLogin(false);
+    });
+  }, []);
+
+  const handleLogOut = () => {
+    // setLoading(true);
+    const timeOut = setTimeout(async () => {
+      try {
+        await signOut(auth);
+        console.log("User log out");
+        // setLoading(false);
+      } catch (err) {
+        console.log("Error to log out");
+      }
+    }, 2000);
+  };
+
   return (
     <>
       <div
@@ -70,17 +97,28 @@ export default function Header() {
           </button>
         </div>
         <div className="tab:flex gap-[12%] w-[20%] justify-center items-center hidden">
-          <div className="flex items-center  ">
-            <button
-              onClick={() => router.push("/logIn")}
-              className="text-[1rem] p-[15%] pr-[20%] pl-[20%] rounded-[0.5rem] hover:bg-gray-200 hover:scale-105 transition-transform active:scale-95   font-medium"
-            >
-              Войти
-            </button>
+          <div className={`flex items-center}`}>
+            {!isLogin && (
+              <button
+                onClick={() => router.push("/logIn")}
+                className={`text-[1rem] p-[15%] pr-[20%] pl-[20%] rounded-[0.5rem] hover:bg-gray-200 hover:scale-105 transition-transform active:scale-95   font-medium`}
+              >
+                Войти
+              </button>
+            )}
+
+            {isLogin && (
+              <button
+                onClick={handleLogOut}
+                className={`text-[1rem] p-[15%] pr-[20%] pl-[20%] rounded-[0.5rem] hover:bg-gray-200 hover:scale-105 transition-transform active:scale-95   font-medium`}
+              >
+                Выйти
+              </button>
+            )}
           </div>
           <div
             onClick={() => router.push("sign-up")}
-            className=" text-[1rem]    "
+            className={`text-[1rem] ${isLogin ? "hidden" : ""}`}
           >
             <BlackButton
               content="Регистрация"

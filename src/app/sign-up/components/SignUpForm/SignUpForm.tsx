@@ -1,11 +1,25 @@
 "use client";
 import Input from "@/shared/Input/Input";
 import { useState } from "react";
+import { auth } from "@/app/firebase/configure";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function SignUpForm() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleSingUp = async () => {
+    try {
+      const res = await createUserWithEmailAndPassword(auth, email, password);
+      console.log(res);
+      setFullName("");
+      setEmail("");
+      setPassword("");
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <>
@@ -41,16 +55,12 @@ export default function SignUpForm() {
                 placeHolder="Создайте пароль (мин. 6 символов)"
               ></Input>
             </div>
-            {/* <div className="flex flex-col ml-[5%] w-full font-medium">
-              <div className="text-[0.9rem]">Подтвердите пароль *</div>
 
-              <Input
-                value={password}
-                placeHolder="Подтвердите ваше пароль"
-              ></Input>
-            </div> */}
             <div className="flex justify-start w-full ml-[5%] ">
-              <button className="border-2px text-[0.9rem]  w-[90%] bg-black text-white p-[2%] hover:bg-gray-900 rounded-[0.5rem] hover:scale-105 transition-transform active:scale-100  ">
+              <button
+                onClick={handleSingUp}
+                className="border-2px text-[0.9rem]  w-[90%] bg-black text-white p-[2%] hover:bg-gray-900 rounded-[0.5rem] hover:scale-105 transition-transform active:scale-100  "
+              >
                 Создать аккаунт
               </button>
             </div>

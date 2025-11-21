@@ -1,8 +1,31 @@
+"use client";
 import Input from "@/shared/Input/Input";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "@/app/firebase/configure";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/app/firebase/AuthProvier";
 export default function LogInForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { user, loading } = useAuth()!;
+  const router = useRouter();
+
+  useEffect(() => {
+    if (user) console.log("User:", user);
+    else console.log("Not logIN");
+  }, [user, loading]);
+
+  const handleSignIn = () => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((res) => router.push("menu"))
+      .catch((err) => {
+        console.log("You have wrong password or email");
+      });
+
+    setEmail("");
+    setPassword("");
+  };
 
   return (
     <>
@@ -30,7 +53,10 @@ export default function LogInForm() {
               ></Input>
             </div>
             <div className="flex justify-start w-full ml-[5%] ">
-              <button className="border-2px  w-[90%] bg-black text-white p-[1%] hover:bg-gray-900 rounded-[0.5rem] hover:scale-105 transition-transform active:scale-100 ">
+              <button
+                onClick={handleSignIn}
+                className="border-2px  w-[90%] bg-black text-white p-[1%] hover:bg-gray-900 rounded-[0.5rem] hover:scale-105 transition-transform active:scale-100 "
+              >
                 Войти
               </button>
             </div>
